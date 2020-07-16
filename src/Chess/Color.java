@@ -1,4 +1,4 @@
-package Model.Enum;
+package Chess;
 
 /**
  *
@@ -6,6 +6,8 @@ package Model.Enum;
  */
 public enum Color {
     BLACK,
-    WHITE;
+    WHITE,
+    GREEN;
+    
     
 }

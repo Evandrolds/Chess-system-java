@@ -1,9 +1,8 @@
-package Model.aplication;
-import Model.enttites.ChessMatch;
-import Model.enttites.UI;
+package aplication;
+import Chess.ChessMatch;
 
 
-/**
+/*
  *
  * @author Evandro Lima
  */

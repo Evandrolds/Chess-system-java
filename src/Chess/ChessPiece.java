@@ -1,6 +1,7 @@
-package Model.enttites;
+package Chess;
 
-import Model.Enum.Color;
+import BoardGame.Board;
+import BoardGame.Piece;
 
 /**
  *

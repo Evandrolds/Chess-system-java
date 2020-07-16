@@ -1,4 +1,6 @@
-package Model.enttites;
+package aplication;
+
+import Chess.ChessPiece;
 
 /**
  *
@@ -14,12 +16,12 @@ public class UI {
             }
             System.out.println();
         }
-        System.out.println("   a   b   c   d   e   f   g   h\n");
+        System.out.println("  a b c d e f g h\n");
     }
 
     private static void printPiece(ChessPiece piece) {
         if (piece == null) {
-            System.out.print("[ ]");
+            System.out.print("-");
         } else {
             System.out.print(piece);
         }

@@ -1,5 +1,7 @@
 
-package Model.enttites;
+package BoardGame;
+
+import BoardGame.Board;
 
 /**
  *
