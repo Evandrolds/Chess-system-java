@@ -1,4 +1,3 @@
-
 package Model.enttites;
 
 /**
@@ -6,9 +5,10 @@ package Model.enttites;
  * @author Evandro Lima
  */
 public class Position {
+
     private Integer row;
     private Integer column;
-    
+
     public Position(Integer row, Integer column) {
         this.row = row;
         this.column = column;
@@ -29,13 +29,10 @@ public class Position {
     public void setColumn(Integer column) {
         this.column = column;
     }
-    public void setValues(Integer column,Integer row){
-        
-    }
+
     @Override
-    public String toString(){
-        return row +" , "+ column;
+    public String toString() {
+        return row + " , " + column;
     }
 
-    
 }

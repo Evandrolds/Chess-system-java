@@ -8,12 +8,12 @@ public class Board {
 
     private int rows;
     private int column;
-    private Piece[][] piece;
+    private Piece[][] pieces;
 
     public Board(int rows, int column) {
         this.rows = rows;
         this.column = column;
-        piece = new Piece[rows][column];
+        pieces = new Piece[rows][column];
 
     }
 
@@ -31,5 +31,11 @@ public class Board {
 
     public void setColumn(int column) {
         this.column = column;
+    }
+    public Piece piece(int row, int colunm){
+        return pieces[row][colunm];
+    }
+    public Piece piece(Position position){
+        return pieces[position.getRow()][position.getColumn()];
     }
 }

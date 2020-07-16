@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Model/enttites/UI.java</file>
+            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Model/Enum/Color.java</file>
+            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Model/aplication/Program.java</file>
+            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Model/enttites/ChessPiece.java</file>
+            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Model/enttites/Piece.java</file>
+            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Model/enttites/Position.java</file>
+            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Model/enttites/Board.java</file>
+            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Model/enttites/ChessMatch.java</file>
+        </group>
     </open-files>
 </project-private>
