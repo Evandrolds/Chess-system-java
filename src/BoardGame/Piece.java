@@ -1,13 +1,11 @@
-
 package BoardGame;
-
-import BoardGame.Board;
 
 /**
  *
  * @author Evandro Lima
  */
 public class Piece {
+
     protected Position position;
     private Board board;
 
@@ -15,9 +13,9 @@ public class Piece {
         this.board = board;
         position = null;
     }
-    protected Board getBoard(){
+
+    protected Board getBoard() {
         return board;
     }
-    
-    
+
 }
