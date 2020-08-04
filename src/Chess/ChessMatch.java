@@ -1,8 +1,10 @@
 package Chess;
 
 import BoardGame.Board;
-import ChessPiece.King;
-import ChessPiece.Roock;
+import BoardGame.Piece;
+import BoardGame.Position;
+import Chess.pieces.King;
+import Chess.pieces.Roock;
 
 /**
  *
@@ -25,6 +27,24 @@ public class ChessMatch {
             }
         }
         return mat;
+    }
+    public ChessPiece performChessMove(ChessPosition sourcePosition,ChessPosition targetPosition){
+            Position source = sourcePosition.toPosition();
+            Position target = targetPosition.toPosition();
+            ValidateSourcePosition(source);
+            Piece capturedPiece = makeMove(source,target);
+            return (ChessPiece)capturedPiece;
+    }
+    private void ValidateSourcePosition(Position position){
+        if(!board.ThereIsAPiece(position)){
+            throw new ChessException(" There ins't piece on source  position ");
+        }
+    }
+    private Piece makeMove(Position source, Position target){
+        Piece p = board.movingPieces(source);
+        Piece capturedPiece= board.movingPieces(target);
+        board.placePiece(p, target);
+        return capturedPiece;
     }
 
     private void placeNewPiece(char color, int row, ChessPiece piece) {

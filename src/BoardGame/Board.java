@@ -66,4 +66,17 @@ public class Board {
         return piece(position) != null;
 
     }
+
+    public Piece movingPieces(Position positin) {
+        if (!positionExists(positin)) {
+            throw new BoardException(" Position not on the borad ");
+        }
+        if (piece(positin) == null) {
+            return null;
+        }
+        Piece aux = piece(positin);
+        aux.position = null;
+        pieces[positin.getRow()][positin.getColumn()] = null;
+        return aux;
+    }
 }
