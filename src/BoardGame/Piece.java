@@ -18,13 +18,14 @@ public abstract class Piece {
         return board;
     }
 
-    public abstract boolean[][] possibleMove();
+    public abstract boolean[][] possibleMoves();
 
-    public boolean possibleMove(Position postion) {
-        return possibleMove()[postion.getRow()][position.getColumn()];
+    public boolean possibleMove(Position position) { // método concreto utilizando o método abstrato/chamado de hook Methodos
+        return possibleMoves()[position.getRow()][position.getColumn()]; // método abstrato
     }
+    // Uma utilização padrão concreta da utilização de um método abstrato
     public boolean isThereAnyPossibleMove(){
-        boolean[][] mat = possibleMove();
+        boolean[][] mat = possibleMoves();// utilizanso o método abstrato
         for(int i= 0; i < mat.length; i++){
             for(int j = 0; j < mat.length; j++){
                 if(mat[i][j]){

@@ -3,6 +3,7 @@ package Chess;
 import BoardGame.Board;
 import BoardGame.Piece;
 import BoardGame.Position;
+
 import Chess.pieces.King;
 import Chess.pieces.Roock;
 
@@ -28,34 +29,41 @@ public class ChessMatch {
         }
         return mat;
     }
-    public ChessPiece performChessMove(ChessPosition sourcePosition,ChessPosition targetPosition){
-            Position source = sourcePosition.toPosition();
-            Position target = targetPosition.toPosition();
-            ValidateSourcePosition(source);
-            validateTargetPosition(source,target);
-            Piece capturedPiece = makeMove(source,target);
-            return (ChessPiece)capturedPiece;
-    }
-    private void ValidateSourcePosition(Position position){
-        if(!board.ThereIsAPiece(position)){
-            throw new ChessException(" There ins't piece on source  position ");
-        }
-        if(!board.piece(position).isThereAnyPossibleMove()){
-            throw new ChessException("There ins't possible move for the shosen piece!");
-        }
+    // Imprimindo as posições possíveis
+    public boolean[][]possibleMoves( ChessPosition sourcePosition){
+        Position position = sourcePosition.toPosition();
+        validateSourcePosition(position);
+        return board.piece(position).possibleMoves();
     }
     private  void validateTargetPosition(Position source,Position target){
-        // verificar se a posição de destino é valida com a posição de origem
+        
+        // verificar se a posição de destino é válida com a posição de origem
         if(!board.piece(source).possibleMove(target)){
             throw new ChessException("The shosen piece can't move to targer position!");
         }
         
     }
     private Piece makeMove(Position source, Position target){
-        Piece p = board.movingPieces(source);
-        Piece capturedPiece= board.movingPieces(target);
+        Piece p = board.removingPiece(source);
+        Piece capturedPiece= board.removingPiece(target);
         board.placePiece(p, target);
         return capturedPiece;
+    }
+    private void validateSourcePosition(Position position){
+        if(!board.thereIsAPiece(position)){
+            throw new ChessException(" There ins't piece on source  position ");
+        }
+        if(!board.piece(position).isThereAnyPossibleMove()){
+            throw new ChessException("There ins't possible move for the shosen piece!");
+        }
+    }
+    public ChessPiece performChessMove(ChessPosition sourcePosition,ChessPosition targetPosition){
+            Position source = sourcePosition.toPosition();
+            Position target = targetPosition.toPosition();
+            validateSourcePosition(source);// Source é origem
+            validateTargetPosition(source,target);// Target é destino
+            Piece capturedPiece = makeMove(source,target);
+            return (ChessPiece)capturedPiece;
     }
 
     private void placeNewPiece(char color, int row, ChessPiece piece) {

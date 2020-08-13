@@ -13,7 +13,7 @@ public class ChessPosition {
 
     public ChessPosition(char column, int row) {
         if (column < 'a' || column > 'h' || row < 1 || row > 8) {
-            throw new ChessException(" Eror Instatiating ChessPosition, Valid values are from a1 to 8h. ");
+            throw new ChessException(" Error Instatiating ChessPosition, Valid values are from a1 to 8h. ");
         }
         this.column = column;
         this.row = row;
