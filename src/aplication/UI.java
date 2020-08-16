@@ -1,12 +1,16 @@
 package aplication;
 
+import BoardGame.Piece;
 import BoardGame.Position;
 import Chess.ChessMatch;
 import Chess.ChessPiece;
 import Chess.ChessPosition;
 import Chess.Color;
+import java.util.Arrays;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -61,9 +65,11 @@ public class UI {
         }
         System.out.println("  a b c d e f g h\n");
     }
-    public static void printMatch(ChessMatch chessMatch){
+    public static void printMatch(ChessMatch chessMatch,List<ChessPiece> captured){
         printBoard(chessMatch.getPieceses());
-        System.out.println("");
+        System.out.println();
+        printCapturedPieces(captured);
+        System.out.println();
         System.out.println(" Turn : "+chessMatch.getTurn());
         System.out.println(" Waiting Player ..."+ chessMatch.getCurrentPlayer());
     }
@@ -85,13 +91,28 @@ public class UI {
         if (piece == null) {
             System.out.print("-" + ANSI_RESET);
         } else {
-            if (piece.getColor() == Color.WHITE) {
+            if (piece.getColor() == Color.BLACK) {
                 System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
             } else {
                 System.out.print(ANSI_WHITE + piece + ANSI_RESET);
             }
         }
         System.out.print(" ");
+    }
+    // Método para imprimir as peças capturadas
+    private static void printCapturedPieces(List<ChessPiece> captured){
+        List<ChessPiece> white = captured.stream().filter(x ->x.getColor()== Color.WHITE).collect(Collectors.toList());
+        List<ChessPiece> black = captured.stream().filter(x ->x.getColor()== Color.BLACK).collect(Collectors.toList());
+        System.out.println(" Captured pieces ");
+        System.out.println();
+        System.out.print(" Black pieces ");
+        System.out.print(ANSI_YELLOW);
+        System.out.println(Arrays.toString(black.toArray()));// imprimir um Array de valores
+        System.out.print(ANSI_RESET);
+        System.out.print(" White pieces ");
+        System.out.print(ANSI_WHITE);
+        System.out.println(Arrays.toString(white.toArray()));
+        System.out.print(ANSI_RESET);
     }
 
 }

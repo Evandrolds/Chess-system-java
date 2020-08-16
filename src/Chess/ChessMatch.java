@@ -6,6 +6,8 @@ import BoardGame.Position;
 
 import Chess.pieces.King;
 import Chess.pieces.Roock;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -21,6 +23,8 @@ public class ChessMatch {
     private ChessPiece enPassantVulnerable;
     private ChessPiece promoted;
     
+    private List <Piece> pieceOnTheBoard = new ArrayList<>();
+    private List <Piece> capturedPieces = new ArrayList<>();
     public int getTurn(){
         return this.turn;
     }
@@ -32,12 +36,12 @@ public class ChessMatch {
     public ChessMatch() {
         board = new Board(8, 8);
         turn = 1;
-        currentPlayer = Color.WHITE;
+        currentPlayer = Color.BLACK;
         initialSetup();
     }
     private void nexTurn(){
         turn++;
-        currentPlayer = ( currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;
+        currentPlayer = ( currentPlayer == Color.BLACK) ? Color.WHITE : Color.BLACK;
     }
 
     public ChessPiece[][] getPieceses() {
@@ -70,6 +74,10 @@ public class ChessMatch {
         Piece p = board.removingPiece(source);
         Piece capturedPiece = board.removingPiece(target);
         board.placePiece(p, target);
+        if(capturedPiece != null){
+            pieceOnTheBoard.remove(capturedPiece);
+            capturedPieces.add(capturedPiece);
+        }
         return capturedPiece;
     }
 
@@ -78,7 +86,7 @@ public class ChessMatch {
             throw new ChessException(" There ins't piece on source  position ");
         }
         if(currentPlayer != ((ChessPiece)board.piece(position)).getColor()){ // feito um down casting da classe ChessPiece.
-            throw new ChessException("The shosen Piece is not your! ");
+            throw new ChessException("The shosen piece is not yours! ");
         }
         if (!board.piece(position).isThereAnyPossibleMove()) {
             throw new ChessException("There ins't possible move for the shosen piece!");
@@ -97,17 +105,10 @@ public class ChessMatch {
 
     private void placeNewPiece(char color, int row, ChessPiece piece) {
         board.placePiece(piece, new ChessPosition(color, row).toPosition());
+        pieceOnTheBoard.add(piece);
     }
 
     private void initialSetup() {
-
-
-        placeNewPiece('c', 1, new Roock(board, Color.BLACK));
-        placeNewPiece('d', 1, new King(board, Color.BLACK));
-        placeNewPiece('e', 1, new Roock(board, Color.BLACK));
-        placeNewPiece('c', 2, new Roock(board, Color.BLACK));
-        placeNewPiece('d', 2, new Roock(board, Color.BLACK));
-        placeNewPiece('e', 2, new Roock(board, Color.BLACK));
 
         placeNewPiece('c', 8, new Roock(board, Color.WHITE));
         placeNewPiece('d', 8, new King(board, Color.WHITE));
@@ -115,5 +116,12 @@ public class ChessMatch {
         placeNewPiece('c', 7, new Roock(board, Color.WHITE));
         placeNewPiece('d', 7, new Roock(board, Color.WHITE));
         placeNewPiece('e', 7, new Roock(board, Color.WHITE));
+        
+        placeNewPiece('c', 1, new Roock(board, Color.BLACK));
+        placeNewPiece('d', 1, new King(board, Color.BLACK));
+        placeNewPiece('e', 1, new Roock(board, Color.BLACK));
+        placeNewPiece('c', 2, new Roock(board, Color.BLACK));
+        placeNewPiece('d', 2, new Roock(board, Color.BLACK));
+        placeNewPiece('e', 2, new Roock(board, Color.BLACK));
     }
 }

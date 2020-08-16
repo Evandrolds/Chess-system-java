@@ -26,7 +26,8 @@ public class King extends ChessPiece {
 
         Position p = new Position(0, 0);
 
-        // Testar se cada uma das 8 direçoes possiveis que um rei pode se mover
+        // Testar cada uma das 8 direçoes possiveis que um rei pode se mover
+        
         // above
         p.setValues(position.getRow() - 1, position.getColumn());
 
