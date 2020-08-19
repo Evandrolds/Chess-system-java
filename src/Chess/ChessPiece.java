@@ -30,6 +30,9 @@ public abstract class ChessPiece extends Piece {
     protected void decreaseMoveCount(){
         
     }
+    ChessPosition getChessPosition(){
+        return ChessPosition.fromPosition(position);
+    }
     
 
 }

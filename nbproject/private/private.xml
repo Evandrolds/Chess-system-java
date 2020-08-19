@@ -2,18 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Chess/pieces/King.java</file>
-            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Chess/pieces/Roock.java</file>
-            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Chess/ChessPosition.java</file>
-            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Chess/ChessException.java</file>
-            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Chess/ChessMatch.java</file>
-            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/BoardGame/Board.java</file>
-            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/BoardGame/Piece.java</file>
-            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/Chess/ChessPiece.java</file>
-            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/BoardGame/Position.java</file>
-            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/aplication/Program.java</file>
-            <file>file:/C:/Users/Evandro%20Lima/Documents/NetBeansProjects/ChessProject/src/aplication/UI.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
