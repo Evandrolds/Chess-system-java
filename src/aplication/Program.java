@@ -20,12 +20,12 @@ public class Program {
         Scanner sc = new Scanner(System.in);
         ChessMatch chessMatch = new ChessMatch();
         List<ChessPiece> captured = new ArrayList<>();
-        while (true) {
+        while (!chessMatch.getCheckMate()) {
             try {
                 UI.clearScreen();
                 UI.printMatch(chessMatch,captured);
                 System.out.println("");
-                System.out.print("  Souce: ");
+                System.out.print("  Source: ");
                 ChessPosition sourse = UI.readChassPosition(sc);
 
                 boolean [][]possibleMoves = chessMatch.possibleMoves(sourse);
@@ -48,6 +48,8 @@ public class Program {
             }
             
         }
+        UI.clearScreen();
+        UI.printMatch(chessMatch, captured);
     }
 
 }

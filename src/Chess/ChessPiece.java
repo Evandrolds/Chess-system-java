@@ -20,19 +20,22 @@ public abstract class ChessPiece extends Piece {
     public Color getColor() {
         return color;
     }
-    protected boolean isThereOpponentPiece(Position position){
-       ChessPiece p = (ChessPiece)getBoard().piece(position);
-       return p != null && p.getColor()!= color;
+
+    protected boolean isThereOpponentPiece(Position position) {
+        ChessPiece p = (ChessPiece) getBoard().piece(position);
+        return p != null && p.getColor() != color;
     }
-    protected void increaseMoveCount(){
-        
+
+    protected void increaseMoveCount() {
+
     }
-    protected void decreaseMoveCount(){
-        
+
+    protected void decreaseMoveCount() {
+
     }
-    ChessPosition getChessPosition(){
-        return ChessPosition.fromPosition(position);
+
+    public ChessPosition getChessPosition() {
+        return ChessPosition.fromPosition(position);// convertendo uma possição da peça de chadres
     }
-    
 
 }
